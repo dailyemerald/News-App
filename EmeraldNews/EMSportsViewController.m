@@ -1,23 +1,32 @@
 //
-//  FBNewsViewController.m
-//  Football
+//  EMSportsViewController.m
+//  EmeraldNews
 //
-//  Created by garage1 on 7/11/12.
+//  Created by garage1 on 9/4/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "EMAppDelegate.h"
-#import "EMNewsViewController.h"
+#import "EMSportsViewController.h"
 #import "EMDetailViewController.h"
 
-@interface EMNewsViewController ()
+@interface EMSportsViewController ()
 
 @end
 
-@implementation EMNewsViewController
+@implementation EMSportsViewController
 @synthesize webView;
 @synthesize urlString;
 @synthesize destURL;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -36,7 +45,7 @@
     
     EMAppDelegate *appDelegate = (EMAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    urlString = [appDelegate.urlEndpoint stringByAppendingString:@"news.html"];
+    urlString = [appDelegate.urlEndpoint stringByAppendingString:@"sports.html"];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     [webView loadRequest:requestObj];
@@ -52,6 +61,7 @@
 
 - (void)viewDidUnload
 {
+    [self setWebView:nil];
     [self setWebView:nil];
     [super viewDidUnload];
 }
@@ -71,10 +81,11 @@
     NSString *requestedURL = url.absoluteString;
     
     if ([requestedURL isEqualToString: urlString]) {
-        NSLog(@"EMNews: Loading initial page.");
+        NSLog(@"Loading initial page.");
         return YES;
         
-    } else if ([requestedURL rangeOfString: @"dailyemerald"].location != NSNotFound) {
+    } else if ([requestedURL rangeOfString: @"dailyemerald.github.com"].location != NSNotFound) {
+        NSLog(@"To the detail view!");
         self.destURL = requestedURL;
         [self performSegueWithIdentifier:@"storyDetail" sender:self];
         return NO;
@@ -88,7 +99,7 @@
         return NO;
         
     } else {
-        NSLog(@"EMNews: Denying request.");
+        NSLog(@"Denying request.");
         return NO;
     }
 }
@@ -97,5 +108,6 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

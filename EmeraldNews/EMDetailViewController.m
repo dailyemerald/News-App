@@ -1,18 +1,17 @@
 //
-//  FBNewsDetailViewController.m
-//  Football
+//  EMDetailViewController.m
 //
 //  Created by garage1 on 7/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "EMNewsDetailViewController.h"
+#import "EMDetailViewController.h"
 
-@interface EMNewsDetailViewController ()
+@interface EMDetailViewController ()
 
 @end
 
-@implementation EMNewsDetailViewController
+@implementation EMDetailViewController
 @synthesize webView;
 @synthesize navHeader;
 @synthesize label;
@@ -31,7 +30,7 @@
 
 - (void)viewDidLoad
 {   
-    NSLog(@"newsdetail %@", [self view]);
+    NSLog(@"newsdetail %@, %@", [self view], urlString);
 
     for(UIView *wview in [[[webView subviews] objectAtIndex:0] subviews]) { 
         if([wview isKindOfClass:[UIImageView class]]) { wview.hidden = YES; } 
@@ -60,6 +59,7 @@
     [self setWebView:nil];
     [self setNavHeader:nil];
     [self setLabel:nil];
+    [self setWebView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -89,7 +89,6 @@
             
             parameter = [parameter stringByReplacingOccurrencesOfString:@"(" withString:@""];
             parameter = [parameter stringByReplacingOccurrencesOfString:@")" withString:@""];
-            
 
             self.title = @"";
         }
@@ -97,7 +96,7 @@
     
     }
     
-    if ([[URL path] rangeOfString:@"newsDetail.html"].location == NSNotFound) {     
+    if ([[URL path] rangeOfString:@"detail.html"].location == NSNotFound) {     
         //nope...
     } else {
         return YES;

@@ -1,6 +1,5 @@
 //
-//  FBNewsDetailViewController.h
-//  Football
+//  EMDetailViewController.h
 //
 //  Created by garage1 on 7/12/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -8,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EMNewsDetailViewController : UIViewController <UIWebViewDelegate>
+@interface EMDetailViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navHeader;

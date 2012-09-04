@@ -13,10 +13,56 @@
 @synthesize window = _window;
 @synthesize urlEndpoint;
 
+- (void)customizeInterface {
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
+    UIImage *headerImage = [UIImage imageNamed:@"header.png"];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBackgroundImage:headerImage forBarMetrics: UIBarMetricsDefault];
+    
+    [[UIToolbar appearance] setBackgroundColor:[UIColor blackColor]];
+    [[UIToolbar appearance] setBackgroundImage:headerImage forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    
+    //UIImage *backbutton = [[UIImage imageNamed:@"backbutton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 8)];
+    //[[UIBarButtonItem appearance] setBackButtonBackgroundImage:backbutton forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    //[[UITabBar appearance] setBackgroundColor:[UIColor clearColor]];
+    //[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabBarItemSelected.png"]];
+    //[[UITabBar appearance] setFrame:CGRectMake(0, 0, 320, 20)];
+    
+    // UITabBarController
+    
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tabbar.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    
+    UITabBarItem *newsTab = [tabController.tabBar.items objectAtIndex:0];
+    [newsTab setFinishedSelectedImage:[UIImage imageNamed:@"news"] withFinishedUnselectedImage:[UIImage imageNamed:@"news"]];
+    //[newsTab setTitle:@""];
+    
+    UITabBarItem *feedTab = [tabController.tabBar.items objectAtIndex:1];
+    [feedTab setFinishedSelectedImage:[UIImage imageNamed:@"sports"] withFinishedUnselectedImage:[UIImage imageNamed:@"sports"]];
+    //[feedTab setTitle:@""];
+    
+    UITabBarItem *statsTab = [tabController.tabBar.items objectAtIndex:2];
+    [statsTab setFinishedSelectedImage:[UIImage imageNamed:@"wknd"] withFinishedUnselectedImage:[UIImage imageNamed:@"wknd"]];
+    //[statsTab setTitle:@""];
+    
+    UITabBarItem *dealsTab = [tabController.tabBar.items objectAtIndex:3];
+    [dealsTab setFinishedSelectedImage:[UIImage imageNamed:@"events"] withFinishedUnselectedImage:[UIImage imageNamed:@"events"]];
+    //[dealsTab setTitle:@""];
+    
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     self.urlEndpoint = @"http://dailyemerald.github.com/News-App/";
+    
+    [self customizeInterface];
     
     return YES;
 }
