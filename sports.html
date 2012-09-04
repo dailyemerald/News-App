@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <title></title>
   <style type="text/css">
-  .feed .time { width: 100px; }
+  .feed .time { width: 200px; }
   </style>
 </head>
 
@@ -25,13 +25,13 @@
 	<li>
 		<img src="{{thumbnail}}" class="thumb" />
 		<h2><a href="detail.html?url={{safePermalink}}">{{{title}}}</a></h2>
-		<p class="time">{{cleanDate}}</p>
+		<p class="time">{{date}}</p>
 	</li>
   </script>
 
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
-
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.0/moment.min.js"></script>
 
   <script type="text/javascript">
 
@@ -53,9 +53,8 @@
 	  success: function(data){
 		console.log(data);
 	    data.forEach(function(story){
-		    story.iso_date = story.date.split(" ").join("T") + "-07:00";
-			story.date = new Date(story.iso_date);
-			story.cleanDate = formatDate(story.date);
+		    story.timestamp = moment( story.date.split(" ").join("T") + "-07:00" );
+			story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
 		
 		    story.safePermalink = encodeURIComponent(story.permalink);
 			if (typeof story.thumbnail === "undefined") {

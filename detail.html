@@ -21,8 +21,8 @@
 	<h2 class="title">{{{title}}}</h2>
 	<div class="meta">
 		<ul>
-			<li class="date">{{date}}</li>
-			<li class="byline">{{author}}</li>
+			<li class="date">Posted {{date}}</li>
+			<li class="byline">By {{author}}</li>
 		</ul>
 	</div>
 	<div class="article-img">
@@ -37,8 +37,8 @@
 	<h2 class="title">{{{title}}}</h2>
 	<div class="meta">
 		<ul>
-			<li class="date">{{date}}</li>
-			<li class="byline">{{author}}</li>
+			<li class="date">Posted {{date}}</li><br>
+			<li class="byline">By {{author}}</li>
 		</ul>
 	</div>
 	<div class="content">
@@ -46,10 +46,11 @@
 	</div>
   </script>
 
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.0/moment.min.js"></script>
 
-  <script type="text/javascript">
+  <script>
 
 	var storyDetail = Handlebars.compile($('#storyDetail-tpl').html());
 	var storyDetailNoImage = Handlebars.compile($('#storyDetail-noImage-tpl').html());
@@ -62,6 +63,9 @@
 	  success: function(data) {
 	    data.forEach(function(story) {	
 			var storyHTML = "";
+			story.timestamp = moment( story.date.split(" ").join("T") + "-07:00" );
+			story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
+
 		    if (typeof story.thumbnail === "string") {
 				storyHTML = storyDetail(story);
 			} else {
@@ -73,6 +77,20 @@
 			          .animate({"opacity":"1"}, 300);
 			var url = "emeraldfootball:finishedLoading(true)"; // tell the UIWebView we're ready to rock and roll. removes the "Loading..." title
 		    window.location = url;
+		
+			var wpcaptions = document.getElementsByClassName('wp-caption');
+		    for(var i=0;i<wpcaptions.length;i++) {
+		    	wpcaptions[i].removeAttribute("height");
+		    	wpcaptions[i].removeAttribute("width");
+		    	wpcaptions[i].removeAttribute("style");
+		  	}
+
+			  var imgs = document.getElementsByTagName('img');
+			  for(var i=0;i<imgs.length;i++) {
+			    imgs[i].removeAttribute("height");
+			    imgs[i].removeAttribute("width");
+			  }
+		
 		});
 	  }
 	});
