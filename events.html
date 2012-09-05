@@ -15,67 +15,12 @@
 <body class="home" ontouchstart=""> <!-- Hack to be able to use :active -->
 	<div id="wrapper">
 		<div class="main">
-			<ul class="feed clearfix">	
-			</ul>
+			
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=450&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=dailyemerald.com_fj9no5ci586ue45fi60fcf40k0%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="300" height="450" frameborder="0" scrolling="no"></iframe>			
+			
 		</div> <!-- .content -->			
 	</div> <!-- #wrapper -->
 </body>	
 
-  <script type="text/x-handlebars-template" id="storyList-tpl">
-	<li>
-		<img src="{{thumbnail}}" class="thumb" />
-		<h2><a href="detail.html?url={{safePermalink}}">{{{title}}}</a></h2>
-		<p class="time">{{cleanDate}}</p>
-	</li>
-  </script>
-
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.0/moment.min.js"></script>
-
-  <script type="text/javascript">
-
-	var templateSource = $('#storyList-tpl').html();
-	var template = Handlebars.compile(templateSource);
-	var wpendpoint = "http://www.dailyemerald.com/section/";
-    var section = "multimedia";
-
-	var formatDate = function(d) {
-		var curr_date = d.getDate();
-		var curr_month = d.getMonth() + 1; //Months are zero based
-		var curr_year = d.getFullYear();
-		return curr_date + "-" + curr_month + "-" + curr_year;
-	}
-
-	$.ajax({
-	  url: wpendpoint+section+"/json/?callback=?",
-	  dataType: 'script',
-	  success: function(data){
-		console.log(data);
-	    data.forEach(function(story){
-		    story.iso_date = story.date.split(" ").join("T") + "-07:00";
-			story.date = new Date(story.iso_date);
-			story.cleanDate = formatDate(story.date);
-		
-		    story.safePermalink = encodeURIComponent(story.permalink);
-			if (typeof story.thumbnail === "undefined") {
-				story.thumbnail = "http://footballapp.dailyemerald.com/v0.9/images/emerald.png";
-			}
-			
-			$("ul").append(template(story));		
-		});	
-		
-		var url = "ToObjC:finishedLoading(true)"; // tell the UIWebView we're ready to rock and roll. removes the "Loading..." title
-	    window.location = url;
-	
-	  }
-	});
-	
-    $(document).on('click', 'body', function(e) {
-	  //e.preventDefault();
-	  //return false;
-	});
-
-  </script>
 </body>
 </html>
