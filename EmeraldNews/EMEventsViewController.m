@@ -32,14 +32,11 @@
 {
     [super viewDidLoad];
     
-    for(UIView *wview in [[[webView subviews] objectAtIndex:0] subviews]) { 
-        if([wview isKindOfClass:[UIImageView class]]) { wview.hidden = YES; } 
-    }
-    UIScrollView* currentScrollView;
-    for (UIView* subView in self.webView.subviews) {
-        if ([subView isKindOfClass:[UIScrollView class]]) {
-            currentScrollView = (UIScrollView*)subView;
-            //currentScrollView.delegate = self;
+    UIScrollView *sv =  [self.webView performSelector:@selector(scrollView)];
+    [sv setDecelerationRate:UIScrollViewDecelerationRateNormal ];
+    for( UIImageView *innerView in sv.subviews ) {
+        if( [innerView isKindOfClass:[UIImageView class]] ) {
+            innerView.hidden = YES;
         }
     }
     webView.scrollView.bounces = NO;
