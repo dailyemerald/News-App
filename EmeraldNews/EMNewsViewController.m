@@ -33,6 +33,7 @@
             //currentScrollView.delegate = self;
         }
     }
+    webView.scrollView.bounces = NO;
     
     EMAppDelegate *appDelegate = (EMAppDelegate *)[[UIApplication sharedApplication] delegate];
     

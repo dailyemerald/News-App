@@ -10,6 +10,10 @@
 		6519E83515F679890013CE76 /* EMSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519E83415F679890013CE76 /* EMSportsViewController.m */; };
 		6519E83915F679920013CE76 /* EMWkndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519E83815F679920013CE76 /* EMWkndViewController.m */; };
 		6519E83C15F679980013CE76 /* EMEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519E83B15F679980013CE76 /* EMEventsViewController.m */; };
+		652D39F915F7EC070033759F /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 652D39F815F7EC070033759F /* icon-57.png */; };
+		652D39FC15F7EC0A0033759F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652D39FB15F7EC0A0033759F /* Default@2x.png */; };
+		652D39FE15F7EC5A0033759F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 652D39FD15F7EC5A0033759F /* Default.png */; };
+		652D3A0415F7F8EB0033759F /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 652D3A0315F7F8EB0033759F /* icon-114.png */; };
 		65853D1C15F697E400442906 /* events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1515F697E400442906 /* events@2x.png */; };
 		65853D1D15F697E400442906 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1615F697E400442906 /* header@2x.png */; };
 		65853D1E15F697E400442906 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1715F697E400442906 /* logo@2x.png */; };
@@ -17,7 +21,6 @@
 		65853D2015F697E400442906 /* sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1915F697E400442906 /* sports@2x.png */; };
 		65853D2115F697E400442906 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1A15F697E400442906 /* tabbar@2x.png */; };
 		65853D2215F697E400442906 /* wknd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D1B15F697E400442906 /* wknd@2x.png */; };
-		65853D2815F6BDFF00442906 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65853D2715F6BDFF00442906 /* logo@2x.png */; };
 		65B799C515E81049006C72AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B799C415E81049006C72AB /* UIKit.framework */; };
 		65B799C715E81049006C72AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B799C615E81049006C72AB /* Foundation.framework */; };
 		65B799C915E81049006C72AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B799C815E81049006C72AB /* CoreGraphics.framework */; };
@@ -36,6 +39,10 @@
 		6519E83815F679920013CE76 /* EMWkndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMWkndViewController.m; sourceTree = "<group>"; };
 		6519E83A15F679980013CE76 /* EMEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMEventsViewController.h; sourceTree = "<group>"; };
 		6519E83B15F679980013CE76 /* EMEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMEventsViewController.m; sourceTree = "<group>"; };
+		652D39F815F7EC070033759F /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
+		652D39FB15F7EC0A0033759F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		652D39FD15F7EC5A0033759F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		652D3A0315F7F8EB0033759F /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
 		65853D1515F697E400442906 /* events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "events@2x.png"; sourceTree = "<group>"; };
 		65853D1615F697E400442906 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		65853D1715F697E400442906 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
@@ -43,7 +50,6 @@
 		65853D1915F697E400442906 /* sports@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sports@2x.png"; sourceTree = "<group>"; };
 		65853D1A15F697E400442906 /* tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar@2x.png"; sourceTree = "<group>"; };
 		65853D1B15F697E400442906 /* wknd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wknd@2x.png"; sourceTree = "<group>"; };
-		65853D2715F6BDFF00442906 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		65B799C015E81049006C72AB /* EmeraldNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmeraldNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B799C415E81049006C72AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65B799C615E81049006C72AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,7 +99,10 @@
 		65B799B515E81048006C72AB = {
 			isa = PBXGroup;
 			children = (
-				65853D2715F6BDFF00442906 /* logo@2x.png */,
+				652D3A0315F7F8EB0033759F /* icon-114.png */,
+				652D39FD15F7EC5A0033759F /* Default.png */,
+				652D39FB15F7EC0A0033759F /* Default@2x.png */,
+				652D39F815F7EC070033759F /* icon-57.png */,
 				65B799CA15E81049006C72AB /* EmeraldNews */,
 				65B799C315E81049006C72AB /* Frameworks */,
 				65B799C115E81049006C72AB /* Products */,
@@ -212,7 +221,10 @@
 				65853D2015F697E400442906 /* sports@2x.png in Resources */,
 				65853D2115F697E400442906 /* tabbar@2x.png in Resources */,
 				65853D2215F697E400442906 /* wknd@2x.png in Resources */,
-				65853D2815F6BDFF00442906 /* logo@2x.png in Resources */,
+				652D39F915F7EC070033759F /* icon-57.png in Resources */,
+				652D39FC15F7EC0A0033759F /* Default@2x.png in Resources */,
+				652D39FE15F7EC5A0033759F /* Default.png in Resources */,
+				652D3A0415F7F8EB0033759F /* icon-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +326,7 @@
 				INFOPLIST_FILE = "EmeraldNews/EmeraldNews-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -327,7 +339,7 @@
 				INFOPLIST_FILE = "EmeraldNews/EmeraldNews-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
