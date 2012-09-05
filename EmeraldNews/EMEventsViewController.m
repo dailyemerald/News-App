@@ -96,8 +96,8 @@
         return NO;
         
     } else {
-        NSLog(@"Denying request.");
-        return NO;
+        NSLog(@"Other request: %@", requestedURL);
+        return YES;
     }
 }
 
