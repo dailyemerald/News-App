@@ -273,8 +273,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ivar Vong (5Z52UWU92D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivar Vong (5Z52UWU92D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Oregon Daily Emerald Publishing Company Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oregon Daily Emerald Publishing Company Inc.";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -289,8 +289,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "6C81171D-62F2-4FDC-9308-258169E1CFC1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6C81171D-62F2-4FDC-9308-258169E1CFC1";
+				PROVISIONING_PROFILE = "D84DBC4D-702D-481D-A5AF-3A1571ABEAED";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D84DBC4D-702D-481D-A5AF-3A1571ABEAED";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -301,8 +301,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ivar Vong (5Z52UWU92D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ivar Vong (5Z52UWU92D)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Oregon Daily Emerald Publishing Company Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oregon Daily Emerald Publishing Company Inc.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -311,8 +311,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "6C81171D-62F2-4FDC-9308-258169E1CFC1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6C81171D-62F2-4FDC-9308-258169E1CFC1";
+				PROVISIONING_PROFILE = "D84DBC4D-702D-481D-A5AF-3A1571ABEAED";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D84DBC4D-702D-481D-A5AF-3A1571ABEAED";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
