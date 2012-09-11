@@ -359,7 +359,7 @@ body {
 .feed li a {
   color: #2a2a2a;
   float: left;
-  padding: 12px 20px 1.25em 83px;
+  padding: 14px 20px 1.25em 83px;
   width: 190px;
 }
 .feed .time {
@@ -376,7 +376,7 @@ body {
 /* ARTICLE
 ----------------------------------------------- */
 .article {
-	background: #fff;
+  background: #fff;
 }
 .article .main {
   padding: 0 0 12px 0;
