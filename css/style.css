@@ -365,8 +365,9 @@ body {
 position: relative;
 left: -25%;
 width: 150%;
-top: -25%;
+height: auto;
 }
+
 .feed h2 {
   line-height: 15px;
   float: left;
