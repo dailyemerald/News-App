@@ -269,7 +269,7 @@ p {
 /* LAYOUT
 ----------------------------------------------- */
 body {
-  background: #e8e8e8;
+  background: url('/News-App/images/feed-bg.png') repeat 0 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
