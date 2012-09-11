@@ -269,14 +269,16 @@ p {
 /* LAYOUT
 ----------------------------------------------- */
 body {
-  background: url('/News-App/images/feed-bg.png') repeat 0 0;
-  background-attachment: fixed!important;
+/*  background: url('/News-App/images/feed-bg.png') repeat 0 0;
+  background-attachment: fixed!important;*/
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
 
 #wrapper {
-  display: block;
+  background: url('/News-App/images/feed-bg.png') repeat 0 0;
+  background-attachment: fixed!important;
+  display: inline-block;
   height: 100%;
   width: 320px;
 }
