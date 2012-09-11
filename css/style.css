@@ -270,6 +270,7 @@ p {
 ----------------------------------------------- */
 body {
   background: url('/News-App/images/feed-bg.png') repeat 0 0;
+  background-attachment: fixed;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
