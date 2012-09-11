@@ -279,6 +279,7 @@ body {
   background: url('/News-App/images/feed-bg.png') repeat 0 0;
   background-attachment: fixed!important;
   display: inline-block;
+  float: left;
   height: 100%;
   width: 320px;
 }
