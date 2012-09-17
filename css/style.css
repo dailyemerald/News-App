@@ -373,9 +373,9 @@ body {
   width: 30px;
 }
 .home .feed .time {
-  left: 78px;
-  margin-top: -2.5em;
-  top: 0;
+  left: 83px;
+  top: -10px;
+  height: 70px;
 }
 /* ARTICLE
 ----------------------------------------------- */
