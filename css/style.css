@@ -379,7 +379,7 @@ body {
 }
 /* ARTICLE
 ----------------------------------------------- */
-.article {
+.article #wrapper{
   background: #fff;
 }
 .article .main {
