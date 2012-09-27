@@ -444,25 +444,36 @@ body.events .feed h2 {
 
 body.events .feed li {
   padding-bottom: 0;
-  background: url(images/events-sprite.png) no-repeat 0 0;
+}
+
+body.events .feed li:before {
+  content: '';
+  background: url(../images/events-sprite.png) no-repeat 0 -12px;
+  background-size: 100%;
+  display: inline-block;
+  height: 29px;
+  left: -7px;
+  position: absolute;
+  top: 6px;
+  width: 46px;
 }
 
 body.events .feed li.arts {
   
 }
 
-body.events .feed li.lecture {
-  
+body.events .feed li.lecture:before {
+  background-position: 0 -43px;
 }
 
-body.events .feed li.music {
-  
+body.events .feed li.music:before {
+  background-position: 0 -74px;
 }
 
 
 body.events .feed li a {
-  padding: 11px 22px 16px 47px;
-  width: 220px;
+  padding: 11px 22px 16px 36px;
+  width: 234px;
 }
 
 body.events .feed li a span {
