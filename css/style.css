@@ -372,7 +372,7 @@ body {
   position: relative;
   width: 30px;
 }
-.home .feed .time {
+.news-feed .feed .time {
   left: 83px;
   top: -10px;
   height: 70px;
@@ -433,92 +433,59 @@ body {
 	width: 100%;
 }
 
-/* FEED
------------------------------------------------ */
-.fan-feed #wrapper {
-  margin-top: 0;
-}
-
-.fan-feed .main {
-  min-height: 100px;
-} /* Reducing min-height for the bottom of page effect to work */
-
-.fan-feed .thumb {
-  width: 53px;
-}
-.fan-feed .tweet-title {
-  left: 75px;
-  font-size: 16px;
-  position: absolute;
-  top: 10px;
-}
-.fan-feed .tweet-content {
-  color: #484848;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 30px 10px 12px 65px;
-  width: 210px;
-  word-wrap: break-word;
-}
-.fan-feed .feed .time {
-  position: absolute;
-}
-.feed .time {
-  left: 270px;
-  top: 10px;
-}
-.feed li.instagram {
-  padding: 0 0px;
-  position: relative;
-  width: 300px;
-}
-.fan-feed .insta-img {
-  width: 300px;
-}
-.fan-feed .instagram .thumb {
-  top: 308px;
-  left: 10px;
-}
-.fan-feed .instagram-title {
-  left: 75px;
-  font-size: 16px;
-  position: absolute;
-  top: 308px;
-}
-.fan-feed .instagram-comment {
-  color: #484848;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 32px 10px 12px 75px;
-  width: 210px;
-  word-wrap: break-word;
-}
-.instagram .time {
-  top: 308px;
-}
-
 /* CALENDAR
 ----------------------------------------------- */
 body.events .feed h2 {
-  color: blue;
+  color: #3d4d59;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 15px;
 }
+
+body.events .feed li {
+  padding-bottom: 0;
+  background: url(images/events-sprite.png) no-repeat 0 0;
+}
+
+body.events .feed li.arts {
+  
+}
+
+body.events .feed li.lecture {
+  
+}
+
+body.events .feed li.music {
+  
+}
+
 
 body.events .feed li a {
-    padding-left: 10px;
+  padding: 11px 22px 16px 47px;
+  width: 220px;
 }
 
+body.events .feed li a span {
+  color: #646464;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 3px;
+  width: 100%;
+}
 
 body.events .feed li a .date {
-  color: red;
 }
 
 body.events .feed li a .time {
-  color: green;
 }
 
 body.events .feed li a .location {
-  color: yellow;
+
 }
+
+
+
+
 
 /* GAME DAY
 ----------------------------------------------- */
