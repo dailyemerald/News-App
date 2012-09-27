@@ -497,6 +497,29 @@ body {
   top: 308px;
 }
 
+/* CALENDAR
+----------------------------------------------- */
+body.calendar .feed h2 {
+  color: blue;
+}
+
+body.calendar .feed li a {
+    padding-left: 10px;
+}
+
+
+body.calendar .feed li a .date {
+  color: red;
+}
+
+body.calendar .feed li a .time {
+  color: green;
+}
+
+body.calendar .feed li a .location {
+  color: yellow;
+}
+
 /* GAME DAY
 ----------------------------------------------- */
 .game-day .main {
