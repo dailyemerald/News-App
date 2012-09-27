@@ -499,24 +499,24 @@ body {
 
 /* CALENDAR
 ----------------------------------------------- */
-body.calendar .feed h2 {
+body.events .feed h2 {
   color: blue;
 }
 
-body.calendar .feed li a {
+body.events .feed li a {
     padding-left: 10px;
 }
 
 
-body.calendar .feed li a .date {
+body.events .feed li a .date {
   color: red;
 }
 
-body.calendar .feed li a .time {
+body.events .feed li a .time {
   color: green;
 }
 
-body.calendar .feed li a .location {
+body.events .feed li a .location {
   color: yellow;
 }
 
