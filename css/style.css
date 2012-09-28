@@ -337,15 +337,8 @@ body {
   width: 280px;
 }
 .home .feed li {
-  padding-bottom: 10px;
+/*   padding-bottom: 10px; */
 }
-/*
-
-.feed li:active {
-  background: #ddd;
-  border-top: 1px solid #ddd;
-}
-*/
 
 .feed .thumb {
   background-size: 100%;
@@ -363,20 +356,27 @@ body {
 .feed li a {
   color: #2a2a2a;
   float: left;
+  min-height: 48px;
   padding: 14px 20px 1.25em 83px;
+  position: relative;
   width: 190px;
+  z-index: 2;
 }
 .feed .time {
+  bottom: 3px;
   color: #8e8e8e;
   font-size: 10px;
-  position: relative;
+  position: absolute;
   width: 30px;
+  z-index: 1;
 }
 .news-feed .feed .time {
-  left: 83px;
-  top: -10px;
-  height: 70px;
+  display: inline-block;
+  left: 94px;
+/*   top: -10px; */
 }
+
+
 /* ARTICLE
 ----------------------------------------------- */
 .article #wrapper{
