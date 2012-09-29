@@ -10,53 +10,75 @@
   <style type="text/css">
   .feed .time { width: 100px; }
   </style>
+
+  <script src="zepto.min.js"></script>
+  <script src="handlebars.min.js"></script>
+  <script src="moment.min.js"></script>
+
+  <script type="text/x-handlebars-template" id="event-tpl">
+    <li class="{{category}}">
+		<a href="#">
+	    	<h2>{{title}}</h2>
+	    	<span class="date">{{date}}</span>
+	    	<span class="time">{{time}}</span>
+	    	<span class="location">{{location}}</span>
+	    </a>
+	</li>
+  </script>
+
+  <script type="text/javascript">
+
+	var templateSource = $('#event-tpl').html();
+	var template = Handlebars.compile(templateSource);
+	var api_endpoint = "http://whispering-escarpment-8275.herokuapp.com/events.json?callback=?";
+
+    var setupStory = function(story) {	
+	    //story.timestamp = moment( story.date.split(" ").join("T") + "-07:00" );
+		//story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
+		return story;
+	}
+
+    var buildPage = function(events) {  
+		events.forEach(function(story) {
+			var storyHTML = template(setupStory(story));
+			$("#events-ul").append(storyHTML);		
+		});
+    }
+	
+	/*
+	setTimeout(function() {
+	buildPage([
+	  {title: "test titl for an anvlkj ewr e",   category: "music", date: "jun 3-2", time: "3-2pm", location: "a location"},
+   	  {title: "test title 2", category: "art", date: "jun 3-2", time: "3-6pm", location: "a loclkjation"}
+	]);
+	}, 500);
+	*/
+	
+	
+	$.ajax({
+	  url: api_endpoint,
+	  dataType: 'script',
+	  success: function(data){
+		buildPage(data);
+	  }
+	});
+
+
+    $(document).on('click', 'body', function(e) {
+	  e.preventDefault();
+	  return false;
+	});
+
+  </script>
+
 </head>
 
 <body class="home events" ontouchstart=""> <!-- Hack to be able to use :active -->
 	<div id="wrapper">
 		<div class="main">
-		  <ul class="feed clearfix">
-		    <li class="art"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
-		    
-		    <li class="music"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
-		    
-		    <li class="lecture"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
-		    
-		    <li class="food"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
-		    
-		    <li class="art"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
-		    
-		    <li class="music"><a href="">
-  		    <h2>Art of the Organic is a long event name that goes here.</h2>
-  		    <span class="date">Jul 21 - Oct 13</span>
-  		    <span class="time">6-8 PM</span>
-  		    <span class="location">McMillan Gallery (Campus)</span>
-		    </a></li>
+		  <ul id="events-ul" class="feed clearfix">
+			
+		
 		  </ul>
 			
 		</div> <!-- .content -->			
