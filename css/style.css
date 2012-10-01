@@ -440,6 +440,8 @@ body.events .feed h2 {
   font-size: 15px;
   line-height: 18px;
   margin-bottom: 15px;
+  display:block;
+  width:100%;
 }
 
 body.events .feed li {

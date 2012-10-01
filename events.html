@@ -7,9 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <title></title>
-  <style type="text/css">
-  .feed .time { width: 100px; }
-  </style>
+  <style type="text/css"> .feed .time { width: 100px; } </style>
+
+</head>
+
+<body class="home events" ontouchstart=""> <!-- Hack to be able to use :active -->
+	<div id="wrapper">
+		<div class="main">
+		  <ul id="events-ul" class="feed clearfix">
+			
+			<li class="arts">
+				<a href="#">
+			    	<h2>Loading events...</h2>
+			    	<span class="date"></span>
+			    	<span class="time"></span>
+			    	<span class="location"></span>
+			    </a>
+			</li>
+		
+		  </ul>
+			
+		</div> <!-- .content -->			
+	</div> <!-- #wrapper -->
+</body>	
 
   <script src="zepto.min.js"></script>
   <script src="handlebars.min.js"></script>
@@ -19,8 +39,8 @@
     <li class="{{category}}">
 		<a href="#">
 	    	<h2>{{title}}</h2>
-	    	<span class="date">{{date}}</span>
-	    	<span class="time">{{time}}</span>
+	    	<span class="date">{{displayDate}}</span>
+	    	<span class="time">{{displayTime}}</span>
 	    	<span class="location">{{location}}</span>
 	    </a>
 	</li>
@@ -30,40 +50,31 @@
 
 	var templateSource = $('#event-tpl').html();
 	var template = Handlebars.compile(templateSource);
-	var api_endpoint = "http://whispering-escarpment-8275.herokuapp.com/events.json?callback=?";
+
+	var makeDisplayDate = function(start_time, end_time) {
+		var start_time = new Date(start_time);
+		var end_time = new Date(end_time);
+		return { 
+			displayDate: moment(start_time).format("MMM YY"),
+			displayTime: moment(start_time).format("h:mma") + " - " + moment(end_time).format("h:mma") 
+		};
+	}
 
     var setupStory = function(story) {	
-	    //story.timestamp = moment( story.date.split(" ").join("T") + "-07:00" );
-		//story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
+	    var displayStuff = makeDisplayDate(story.start_time, story.end_time);
+		story.displayDate = displayStuff.displayDate; // this is ugly.
+		story.displayTime = displayStuff.displayTime;
 		return story;
 	}
 
     var buildPage = function(events) {  
+		$("#events-ul").html("");
 		events.forEach(function(story) {
 			var storyHTML = template(setupStory(story));
 			$("#events-ul").append(storyHTML);		
 		});
     }
 	
-	/*
-	setTimeout(function() {
-	buildPage([
-	  {title: "test titl for an anvlkj ewr e",   category: "music", date: "jun 3-2", time: "3-2pm", location: "a location"},
-   	  {title: "test title 2", category: "art", date: "jun 3-2", time: "3-6pm", location: "a loclkjation"}
-	]);
-	}, 500);
-	*/
-	
-	
-	$.ajax({
-	  url: api_endpoint,
-	  dataType: 'script',
-	  success: function(data){
-		buildPage(data);
-	  }
-	});
-
-
     $(document).on('click', 'body', function(e) {
 	  e.preventDefault();
 	  return false;
@@ -71,19 +82,6 @@
 
   </script>
 
-</head>
+  <script src="http://dev.dailyemerald.com:3000/events.json?callback=buildPage"></script>
 
-<body class="home events" ontouchstart=""> <!-- Hack to be able to use :active -->
-	<div id="wrapper">
-		<div class="main">
-		  <ul id="events-ul" class="feed clearfix">
-			
-		
-		  </ul>
-			
-		</div> <!-- .content -->			
-	</div> <!-- #wrapper -->
-</body>	
-
-</body>
 </html>
