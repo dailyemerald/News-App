@@ -490,6 +490,7 @@ body.events .feed li a .date {
 }
 
 body.events .feed li a .time {
+  position: static;
 }
 
 body.events .feed li a .location {
