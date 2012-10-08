@@ -22,7 +22,7 @@
 	<h2 class="title">{{{title}}}</h2>
 	<div class="meta">
 		<ul>
-			<li class="date">Posted {{date}}</li>
+			<li class="date">{{date}}</li>
 			<li class="byline">By {{author}}</li>
 		</ul>
 	</div>
@@ -65,7 +65,8 @@
 	    data.forEach(function(story) {	
 			var storyHTML = "";
 			story.timestamp = moment( story.date.split(" ").join("T") + "-07:00" );
-			story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
+			//story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
+			 story.date = story.timestamp.format("MMM DD , YYYY");
 
 		    if (typeof story.thumbnail === "string") {
 				storyHTML = storyDetail(story);
