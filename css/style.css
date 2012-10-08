@@ -388,22 +388,23 @@ body {
   font-family: "palatino", sans-serif!important;
 }
 .article .title {
-  font-size: 18px;
-  line-height: 22.5px;
+  font-family: helvetica;
+  font-size: 24px;
+  line-height: 27px;
+  margin-bottom: 9px;
   padding: 8px 20px 4px 20px;
 }
 .article .meta {
-  color: #7e7e7e;
-  font-size: 12px;
+  color: #ddd;
+  font-family: helvetica;
+  font-size: 11px;
   margin-bottom: 16px;
   padding: 0 20px;
 }
-.article .meta li {
-  display: inline-block;
+.article .meta span {
+  color: #7e7e7e;
 }
-.article .meta .date {
-  margin-right: 5px;
-}
+
 .article-img img {
   width: 320px;
   margin-bottom: 16px;
@@ -432,6 +433,40 @@ body {
 	height: auto;
 	width: 100%;
 }
+
+
+  /* FANCY IMAGE HEADER */
+/*
+  .article-img {
+    top: 0;
+    background: #000;    
+  }
+  
+  
+  .article-img:after {
+    content: '';
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+
+
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  h2.title {
+    z-index: 9;
+    color: #fff;
+  }
+  
+  .meta {
+    color: #fff;
+    z-index: 999;
+    margin-bottom: 40px;
+  }
+*/
 
 /* CALENDAR
 ----------------------------------------------- */
