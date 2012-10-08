@@ -389,9 +389,9 @@ body {
 }
 .article .title {
   font-family: helvetica;
-  font-size: 24px;
-  line-height: 27px;
-  margin-bottom: 9px;
+  font-size: 21px;
+  line-height: 24px;
+  margin: 9px 0 6px 0;
   padding: 8px 20px 4px 20px;
 }
 .article .meta {
