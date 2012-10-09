@@ -532,9 +532,18 @@ body.events .feed li a .location {
 
 }
 
-
-
-
+.beta {
+  background: url(../images/beta.png) no-repeat 0 0;
+  background-size: 100%;
+  height: 47px;
+  margin-bottom: -2px;
+  position: absolute;
+  right: 3px;
+  text-indent: -99999em;
+  top: 0;
+  width: 35px;
+  z-index: 99;
+}
 
 /* GAME DAY
 ----------------------------------------------- */
