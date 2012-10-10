@@ -10,6 +10,14 @@
   <style type="text/css">
   .feed .time { width: 200px; }
   </style>
+
+  <script>
+  function viewDidAppear() {
+	// if the view controller is alive, then this will be called for the view's viewDidAppear event.
+	mixpanel.track("wknd", {viewDidAppear: "true"});
+  }
+  </script>
+
 </head>
 
 <body class="home news-feed" ontouchstart=""> <!-- Hack to be able to use :active -->
