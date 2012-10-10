@@ -47,6 +47,19 @@
 
   <script>
 
+	var get_category = function(story) {
+		var categories = story.categories;
+		if (categories.indexOf("News") > 0) {
+			return "news";
+		} else if (categories.indexOf("Sports") > 0) {
+			return "sports";
+		} else if (categories.indexOf("Wknd") > 0) {
+			return "wknd";
+		} else {
+			return categories.join(";");
+		}
+	}
+
 	var storyDetail = Handlebars.compile($('#storyDetail-tpl').html());
 	var storyDetailNoImage = Handlebars.compile($('#storyDetail-noImage-tpl').html());
 
@@ -62,7 +75,8 @@
 			//story.date = story.timestamp.format("dddd, MMMM Do") + " at " + story.timestamp.format("h:mm a");
 			 story.date = story.timestamp.format("MMM DD, YYYY");
 
-			mixpanel.track("detail", {title: story.title}); //
+			var category = get_category(story);
+			mixpanel.track("detail", { title: story.title, category: category }); //
 
 		    if (typeof story.thumbnail === "string") {
 				storyHTML = storyDetail(story);
