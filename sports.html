@@ -18,6 +18,7 @@
   <script>
   function viewDidAppear() {
 	// if the view controller is alive, then this will be called for the view's viewDidAppear event.
+	mixpanel.track("news", {viewDidAppear: "true"});
   }
   </script>
 
