@@ -389,8 +389,8 @@ body {
 }
 .article .title {
   font-family: helvetica;
-  font-size: 21px;
-  line-height: 24px;
+  font-size: 27px;
+  line-height: 30px;
   margin: 9px 0 6px 0;
   padding: 8px 20px 4px 20px;
 }
@@ -414,10 +414,10 @@ body {
   padding: 0 20px 12px 20px;
 }
 .article .content p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: "palatino", sans-serif!important;
-  line-height: 24px;
-  margin-bottom: 18px;
+  line-height: 27px;
+  margin-bottom: 27px;
 }
 .article .content p:last-of-type {
   border-bottom: 1px solid #ddd;
