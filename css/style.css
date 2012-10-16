@@ -388,9 +388,9 @@ body {
   font-family: "palatino", sans-serif!important;
 }
 .article .title {
-  font-family: helvetica;
-  font-size: 27px;
-  line-height: 30px;
+  font-family: HelveticaNeue-CondensedBold;
+  font-size: 30px;
+  line-height: 33px;
   margin: 9px 0 6px 0;
   padding: 8px 20px 4px 20px;
 }
@@ -415,8 +415,8 @@ body {
 }
 .article .content p {
   font-size: 18px;
-  font-family: "palatino", sans-serif!important;
-  line-height: 27px;
+  font-family: "georgia", sans!important;
+  line-height: 24px;
   margin-bottom: 27px;
 }
 .article .content p:last-of-type {
